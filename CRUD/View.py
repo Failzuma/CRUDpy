@@ -1,6 +1,24 @@
 import enum
 from . import Operasi
 
+def create_console():
+    print("\n\n"+"="*100)
+    print("Input book data")
+    author = input("Author\t: ")
+    title = input("Title\t: ")
+    while True:
+        try:
+            year = int(input("Year\t: "))
+            if len(str(year)) == 4:
+                break
+            else:
+                print("Year must be 4 digits (yyyy)")
+        except:
+            print("Year must be an integer, please input it properly (yyyy)")
+    Operasi.create(year,title,author)
+    print("\nHere's the data")
+    read_console()
+
 def read_console():
     data_file = Operasi.read()
 
