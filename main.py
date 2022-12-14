@@ -34,10 +34,10 @@ if __name__ == "__main__":
         match user_option:
             case "1": CRUD.read_console()
             case "2": CRUD.create_console()
-            case "3": print("Update Data")
+            case "3": CRUD.update_console()
             case "4": print("Delete Data")
 
         is_done = input("Done already? (y/n)")
-        if is_done == "y" or is_done == "Y":
+        if is_done in ['y', 'Y']:
             break
     print("Program stopped, thanks for coming by!")
