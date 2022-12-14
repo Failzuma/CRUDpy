@@ -14,8 +14,8 @@ def update_console():
     break_data = bookData.split(",")
     pk = break_data[0]
     date_add = break_data[1]
-    title = break_data[2]
-    author = break_data[3]
+    author = break_data[2]
+    title = break_data[3]
     year = break_data[4][:-1]
     print(pk)
     print(date_add)
@@ -77,13 +77,13 @@ def read_console():
     data_file = Operasi.read()
 
     index = "No"
-    title = "Title"
     author = "Author"
+    title = "Title"
     year = "Year"
 
     # HEADER
     print("\n"+"="*100)
-    print(f"{index:4} | {title:40} | {author:40} | {year:5}")
+    print(f"{index:4} | {author:40} | {title:40} | {year:5}")
     print("-"*100)
 
     #DATA

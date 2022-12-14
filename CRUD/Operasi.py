@@ -11,7 +11,7 @@ def update(noBook,pk,date_add,title,author,year):
     data["title"] = title + Database.TEMPLATE["title"][len(title):]
     data["year"] = str(year)
 
-    data_str = f'{data["pk"]},{data["date_add"]},{data["author"]},{data["title"]},{data["year"]}'
+    data_str = f'{data["pk"]},{data["date_add"]},{data["author"]},{data["title"]},{data["year"]}\n'
     
     data_length = len(data_str)
     
@@ -30,7 +30,7 @@ def create(year,title,author):
     data["title"] = title + Database.TEMPLATE["title"][len(title):]
     data["year"] = str(year)
 
-    data_str = f'{data["pk"]},{data["date_add"]},{data["author"]},{data["title"]},{data["year"]}'
+    data_str = f'{data["pk"]},{data["date_add"]},{data["author"]},{data["title"]},{data["year"]}\n'
     try:
         with open(Database.DB_NAME,'a',encoding="utf-8") as file:
             file.write(data_str)
