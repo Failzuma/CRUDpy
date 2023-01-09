@@ -1,6 +1,33 @@
 import enum
 from . import Operasi
 
+def delete_console():
+    read_console()
+    while(True):
+        print("Please choose the number book to be delete: ")
+        noBook = int(input("Choose the book you want to delete: "))
+        bookData = Operasi.read(index=noBook)
+        if bookData:
+            break_data = bookData.split(",")
+            pk = break_data[0]
+            date_add = break_data[1]
+            author = break_data[2]
+            title = break_data[3]
+            year = break_data[4][:-1]
+
+            print("\n"+"="*100)
+            print("Input the data you want to update: ")
+            print(f"Title\t: {title:.40}")
+            print(f"Author\t: {author:.40}")
+            print(f"Year\t: {year:4}")
+            is_done = input("Are you sure to delete this book? (y/n): ")
+            if is_done in ['y','Y']:
+                Operasi.delete(noBook)
+                break
+        else:
+            print("Book not found, please input the number properly")
+    print("Data deletion success!")
+       
 def update_console():
     read_console()
     while(True):
@@ -50,7 +77,7 @@ def update_console():
             case _:
                 print("The number you input is not valid, please input it properly")
         
-        is_done = input("Done already? (y/n): ")
+        is_done = input("Done updating? (y/n): ")
         if is_done in ['y', 'Y']:
             break
     Operasi.update(noBook,pk,date_add,title,author,year)

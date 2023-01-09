@@ -35,9 +35,9 @@ if __name__ == "__main__":
             case "1": CRUD.read_console()
             case "2": CRUD.create_console()
             case "3": CRUD.update_console()
-            case "4": print("Delete Data")
+            case "4": CRUD.delete_console()
 
-        is_done = input("Done already? (y/n)")
+        is_done = input("Done already? (y/n): ")
         if is_done in ['y', 'Y']:
             break
     print("Program stopped, thanks for coming by!")
