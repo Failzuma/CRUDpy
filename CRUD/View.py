@@ -1,4 +1,4 @@
-import enum
+import os
 from . import Operasi
 
 def delete_console():
@@ -60,7 +60,7 @@ def update_console():
         user_option = input("Choose [1], [2], [3]: ")
         match user_option:
             case "1": # Title
-                title = input("Input new title\t: ")
+                title = input("Input new title \t: ")
             case "2": # Author
                 author = input("Input new author\t: ")
             case "3": # Year
@@ -68,7 +68,12 @@ def update_console():
                     try:
                         year = int(input("Input new year\t: "))
                         if len(str(year)) == 4:
-                            break
+                             os.system("cls")
+                             print("Your new data:")
+                             print(f"Title\t: {title:.40}")
+                             print(f"Author\t: {author:.40}")
+                             print(f"Year\t: {year:4}")
+                             break
                         else:
                             print("Year must be 4 digits (yyyy)")
                     except:
@@ -76,7 +81,11 @@ def update_console():
                 break
             case _:
                 print("The number you input is not valid, please input it properly")
-        
+        os.system("cls")
+        print("Your new data:")
+        print(f"Title\t: {title:.40}")
+        print(f"Author\t: {author:.40}")
+        print(f"Year\t: {year:4}")
         is_done = input("Done updating? (y/n): ")
         if is_done in ['y', 'Y']:
             break
