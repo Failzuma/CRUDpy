@@ -27,7 +27,8 @@ if __name__ == "__main__":
         print(f"1. Read Data")
         print(f"2. Create Data")
         print(f"3. Update Data")
-        print(f"4. Delete Data\n")
+        print(f"4. Delete Data")
+        print(f"5. Delete Database\n")
 
         user_option = input("Pick a number: ")
 
@@ -36,6 +37,7 @@ if __name__ == "__main__":
             case "2": CRUD.create_console()
             case "3": CRUD.update_console()
             case "4": CRUD.delete_console()
+            case "5": os.remove("data.txt")
 
         is_done = input("Done already? (y/n): ")
         if is_done in ['y', 'Y']:
